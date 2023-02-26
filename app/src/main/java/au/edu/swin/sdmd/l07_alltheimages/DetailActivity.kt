@@ -11,13 +11,20 @@ class DetailActivity : AppCompatActivity() {
     // version 2.0
     private var location: Location? = null
 
+    private var changed: Boolean = false;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
         val vVisited = findViewById<Switch>(R.id.visited)
+        changed = false
+
         vVisited.setOnClickListener {
-            location!!.visited = vVisited.isChecked
+            if (vVisited.isChecked != location!!.visited) {
+                location!!.visited = vVisited.isChecked
+                changed = true
+            }
         }
 
         location = intent.getParcelableExtra<Location>("location")
@@ -45,10 +52,12 @@ class DetailActivity : AppCompatActivity() {
      */
     override fun onBackPressed() {
         // pass result back to Main Activity
-        val i = intent.apply {
-            putExtra("visited", location)
+        if (changed) {
+            val i = intent.apply {
+                putExtra("visited", location)
+            }
+            setResult(Activity.RESULT_OK, i)
         }
-        setResult(Activity.RESULT_OK, i)
 
         // called last!
         super.onBackPressed()

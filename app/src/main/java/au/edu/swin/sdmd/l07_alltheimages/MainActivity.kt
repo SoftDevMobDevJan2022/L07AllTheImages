@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -77,9 +78,16 @@ class MainActivity : AppCompatActivity() {
 
           // update listView
           listView.adapter!!.notifyItemChanged(index!!)
+
+          notifyUser()
         }
       }
     }
+  }
+
+  private fun notifyUser() {
+    // inform
+    Toast.makeText(this, "Item updated", Toast.LENGTH_SHORT).show()
   }
 
   private fun initData(): MutableList<Location> {
