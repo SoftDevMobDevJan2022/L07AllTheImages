@@ -1,4 +1,4 @@
-package au.edu.swin.sdmd.l07_alltheimages
+package au.edu.swin.sdmd.l07_alltheimages.recyclerview
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Switch
 import android.widget.TextView
+import au.edu.swin.sdmd.l07_alltheimages.R
+import au.edu.swin.sdmd.l07_alltheimages.model.Location
 
 class DetailActivity : AppCompatActivity() {
     // version 2.0

@@ -1,4 +1,4 @@
-package au.edu.swin.sdmd.l07_alltheimages
+package au.edu.swin.sdmd.l07_alltheimages.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

@@ -1,4 +1,4 @@
-package au.edu.swin.sdmd.l07_alltheimages
+package au.edu.swin.sdmd.l07_alltheimages.recyclerview
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import au.edu.swin.sdmd.l07_alltheimages.R
+import au.edu.swin.sdmd.l07_alltheimages.model.Location
 
 class TheAdapter(private val data: List<Location>,
                  private val listener: (Location, Int) -> Unit) :
@@ -15,7 +17,7 @@ class TheAdapter(private val data: List<Location>,
      * invoked by RecyclerView to create a new ViewHolder for an item
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
-        TheAdapter.TheHolder {
+        TheHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater
             .inflate(R.layout.layout_row, parent, false) as View
@@ -33,7 +35,7 @@ class TheAdapter(private val data: List<Location>,
     /**
      * invoked by RecyclerView to bind a new ViewHolder to item at the specified position
      */
-    override fun onBindViewHolder(holder: TheAdapter.TheHolder, position: Int) {
+    override fun onBindViewHolder(holder: TheHolder, position: Int) {
         val item = data[position]
 
 //        Log.i("RecylerView.Adapter", "item: ${item}")
