@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    //val listView =
     /*version 2.0*/
     listView = findViewById<RecyclerView>(R.id.locationList)
 
@@ -77,10 +76,12 @@ class MainActivity : AppCompatActivity() {
         visited?.let {
 //          selected = visited
           // update data item
-          index?.let {data[it] = visited}
+          index?.let {
+            data[it] = visited
 
-          // update listView
-          listView.adapter!!.notifyItemChanged(index!!)
+            // update listView
+            listView.adapter?.notifyItemChanged(it)
+          }
 
           notifyUser()
         }
