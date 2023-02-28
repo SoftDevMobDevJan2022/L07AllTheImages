@@ -14,7 +14,7 @@ import au.edu.swin.sdmd.l07_alltheimages.model.Location
 
 class MainActivity : AppCompatActivity() {
 
-  private lateinit var adapter: TheAdapter
+  private lateinit var adapter: RecyclerListAdapter
   private lateinit var linearLayoutManager: LinearLayoutManager
 
   // @version 2.0: selected item
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     // version 3.0: use DataSource class
     data = DataSource(this.resources).getData()
 
-    adapter = TheAdapter(data) { location: Location, i: Int ->
+    adapter = RecyclerListAdapter(data) { location: Location, i: Int ->
       showDetail(location, i)
     }
     listView.adapter = adapter

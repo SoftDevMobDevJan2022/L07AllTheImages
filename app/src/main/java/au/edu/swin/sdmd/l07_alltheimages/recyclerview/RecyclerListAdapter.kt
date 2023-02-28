@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import au.edu.swin.sdmd.l07_alltheimages.R
 import au.edu.swin.sdmd.l07_alltheimages.model.Location
 
-class TheAdapter(private val data: List<Location>,
-                 private val listener: (Location, Int) -> Unit) :
-    RecyclerView.Adapter<TheAdapter.TheHolder>()  {
+class RecyclerListAdapter(private val data: List<Location>,
+                          private val listener: (Location, Int) -> Unit) :
+    RecyclerView.Adapter<RecyclerListAdapter.TheHolder>()  {
 
     /**
      * invoked by RecyclerView to create a new ViewHolder for an item
